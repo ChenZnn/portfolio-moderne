@@ -52,8 +52,8 @@ const ContactForm = () => {
         });
       }, 5000);
       
-    } catch (err) {
-      // Changed variable name from 'error' to 'err' to avoid the unused variable warning
+    } catch (_) {
+      // Using underscore as a convention for unused variables
       setStatus({
         submitted: false,
         submitting: false,
