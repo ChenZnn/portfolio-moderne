@@ -52,7 +52,8 @@ const ContactForm = () => {
         });
       }, 5000);
       
-    } catch (error) {
+    } catch (err) {
+      // Changed variable name from 'error' to 'err' to avoid the unused variable warning
       setStatus({
         submitted: false,
         submitting: false,
