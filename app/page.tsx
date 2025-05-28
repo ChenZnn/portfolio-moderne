@@ -1,12 +1,13 @@
 import ProjectCard from "../components/ProjectCard";
 import ContactForm from "../components/ContactForm";
+import ContactInfo from "../components/ContactInfo";
 import Footer from "../components/Footer";
 
 export default function Home() {
   // Données de projets (à personnaliser)
   const projects = [
     {
-      title: "Portfolio Moderne",
+      title: "Portfolio Moderne (En Dev)",
       description: "Un portfolio personnel développé avec Next.js et Tailwind CSS, présentant mes compétences et projets de manière élégante et responsive.",
       imageUrl: "/images/portfolio.jpg", // Ajoutez une image dans le dossier public/images
       tags: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -14,7 +15,7 @@ export default function Home() {
       demoLink: "https://portfolio.example.com"
     },
     {
-      title: "Site de l'Association Coop 5 pour 100",
+      title: "Site de l'Association Coop 5 pour 100 (En dev)",
       description: "Plateforme complète pour l'association Coop 5 pour 100 avec un backend permettant la gestion dynamique des contenus (textes et images) par les administrateurs.",
       imageUrl: "/images/coop5pour100.jpg",
       tags: ["NextJS", "Strapi", "TailwindCSS", "TypeScript"],
@@ -22,12 +23,20 @@ export default function Home() {
       demoLink: "https://coop5pour100.org"
     },
     {
-      title: "Site de Coiffure",
+      title: "Site de Coiffure (En dev)",
       description: "Site vitrine élégant pour un salon de coiffure, avec présentation des services, galerie de réalisations et système de prise de rendez-vous.",
       imageUrl: "/images/coiffure.jpg",
       tags: ["NextJS", "TailwindCSS", "Responsive Design"],
       codeLink: "https://github.com/ChenZnn/sitecoiffeur",
-      demoLink: "https://salon-coiffure.example.com"
+      demoLink: "https://sitecoiffeur.vercel.app/"
+    },
+    {
+      title: "Application de Discussion IA",
+      description: "Application mobile développée avec Flutter permettant aux utilisateurs de discuter avec des personnages issus de différents univers fictifs. L'application communique avec une API connectée à une IA pour générer les conversations et les images.",
+      imageUrl: "/images/chat-app.jpg",
+      tags: ["Flutter", "Dart", "API", "Intelligence Artificielle", "Mobile"],
+      codeLink: "https://github.com/ChenZnn/Mobile",
+      demoLink: "https://sitecoiffeur.vercel.app/"
     }
   ];
 
@@ -94,7 +103,7 @@ export default function Home() {
               <div className="space-y-3 text-center md:text-right">
                 <div className="flex items-center justify-center md:justify-end space-x-2">
                   <span className="text-blue-300">Localisation:</span>
-                  <span className="text-gray-300">Caen, France</span>
+                  <span className="text-gray-300">Normandie, France</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-end space-x-2">
                   <span className="text-blue-300">Spécialité:</span>
@@ -157,9 +166,9 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-xl text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-blue-400">Contactez-moi</h2>
           <p className="text-lg text-gray-300 mb-10">
-            Une question, une proposition de projet, ou simplement envie de discuter ? N&apos;hésitez pas à m&apos;envoyer un message !
+            Une question, une proposition de projet, ou simplement envie de discuter ? Voici comment me joindre directement :
           </p>
-          <ContactForm />
+          <ContactInfo />
         </div>
       </section>
 
