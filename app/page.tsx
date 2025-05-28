@@ -1,5 +1,4 @@
 import ProjectCard from "../components/ProjectCard";
-import ContactForm from "../components/ContactForm";
 import ContactInfo from "../components/ContactInfo";
 import Footer from "../components/Footer";
 
