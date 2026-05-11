@@ -38,6 +38,7 @@ const Header = () => {
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
             <NavLink href="/#a-propos">À Propos</NavLink>
+            <NavLink href="/#parcours">Parcours</NavLink>
             <NavLink href="/#projets">Projets</NavLink>
             <NavLink href="/#contact">Contact</NavLink>
             <a 
@@ -73,6 +74,7 @@ const Header = () => {
           <div className="md:hidden mt-4 py-4 border-t border-gray-700">
             <nav className="flex flex-col space-y-4">
               <MobileNavLink href="/#a-propos" onClick={() => setIsMobileMenuOpen(false)}>À Propos</MobileNavLink>
+              <MobileNavLink href="/#parcours" onClick={() => setIsMobileMenuOpen(false)}>Parcours</MobileNavLink>
               <MobileNavLink href="/#projets" onClick={() => setIsMobileMenuOpen(false)}>Projets</MobileNavLink>
               <MobileNavLink href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</MobileNavLink>
               <a 

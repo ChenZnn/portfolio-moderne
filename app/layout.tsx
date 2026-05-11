@@ -6,8 +6,16 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mon Portfolio Moderne | Théo",
-  description: "Portfolio de Théo, développeur web passionné.",
+  title: "Théo Noel — Développeur Full-Stack",
+  description: "Portfolio de Théo Noel, développeur full-stack spécialisé Next.js, React et TypeScript. En recherche d'alternance CDA 2026-2027.",
+  openGraph: {
+    title: "Théo Noel — Développeur Full-Stack",
+    description: "Portfolio de Théo Noel, développeur full-stack. Projets : crypto trading bot, sites web, app mobile IA.",
+    url: "https://portfolio-moderne.vercel.app",
+    siteName: "Portfolio Théo Noel",
+    locale: "fr_FR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

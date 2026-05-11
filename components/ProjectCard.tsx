@@ -1,5 +1,7 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface ProjectCardProps {
   title: string;
@@ -8,44 +10,57 @@ interface ProjectCardProps {
   tags: string[];
   codeLink?: string;
   demoLink?: string;
+  detailLink?: string;
 }
 
-const ProjectCard = ({ title, description, imageUrl, tags, codeLink, demoLink }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, imageUrl, tags, codeLink, demoLink, detailLink }: ProjectCardProps) => {
+  const router = useRouter();
+
   return (
-    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1">
-      {imageUrl && (
+    <div
+      className={`bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 ${detailLink ? 'cursor-pointer' : ''}`}
+      onClick={() => detailLink && router.push(detailLink)}
+    >
+      {imageUrl ? (
         <div className="relative h-48 w-full">
-          <Image 
-            src={imageUrl} 
-            alt={title} 
-            fill 
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
             className="object-cover"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
           />
         </div>
+      ) : (
+        <div className="h-48 w-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+          <span className="text-4xl">🚀</span>
+        </div>
       )}
-      
+
       <div className="p-6">
         <h3 className="text-2xl font-semibold mb-3 text-white">{title}</h3>
-        
+
         <p className="text-gray-400 mb-4 text-sm">{description}</p>
-        
+
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-2 py-1 text-xs font-medium bg-gray-700 text-blue-300 rounded-md"
             >
               {tag}
             </span>
           ))}
         </div>
-        
-        <div className="flex space-x-4">
+
+        <div className="flex space-x-4" onClick={(e) => e.stopPropagation()}>
           {codeLink && (
-            <Link 
-              href={codeLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <Link
+              href={codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 font-medium flex items-center"
             >
               <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -54,12 +69,18 @@ const ProjectCard = ({ title, description, imageUrl, tags, codeLink, demoLink }:
               Code
             </Link>
           )}
-          
+
+          {detailLink && (
+            <Link href={detailLink} className="text-purple-400 hover:text-purple-300 font-medium flex items-center">
+              Détails →
+            </Link>
+          )}
+
           {demoLink && (
-            <Link 
-              href={demoLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <Link
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 font-medium flex items-center"
             >
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

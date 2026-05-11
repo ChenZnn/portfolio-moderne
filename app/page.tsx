@@ -6,15 +6,23 @@ export default function Home() {
   // Données de projets (à personnaliser)
   const projects = [
     {
-      title: "Portfolio Moderne (En Dev)",
+      title: "Crypto Trading Bot — Système Autonome",
+      description: "Système de trading crypto autonome déployé 24/7 sur Oracle Cloud. Architecture microservices avec Docker, dashboard temps réel, notifications Telegram, et pipeline de backtesting scientifique sur 4 ans de données (184 expériences). 320 tests automatisés, CI-ready.",
+      imageUrl: "/dashboard-bot.jpg",
+      tags: ["Docker", "Oracle Cloud", "AsyncIO", "Streamlit", "REST API", "DevOps"],
+      codeLink: "https://github.com/ChenZnn/crypto-trading-bot",
+      demoLink: "http://89.168.57.148:8501"
+    },
+    {
+      title: "Portfolio Moderne",
       description: "Un portfolio personnel développé avec Next.js et Tailwind CSS, présentant mes compétences et projets de manière élégante et responsive.",
       imageUrl: "/images/portfolio.jpg", // Ajoutez une image dans le dossier public/images
       tags: ["Next.js", "TypeScript", "Tailwind CSS"],
       codeLink: "https://github.com/ChenZnn/portfolio-moderne",
-      demoLink: "https://portfolio.example.com"
+      demoLink: "https://portfolio-moderne.vercel.app/"
     },
     {
-      title: "Site de l'Association Coop 5 pour 100 (En dev)",
+      title: "Site Coop 5 pour 100",
       description: "Plateforme complète pour l'association Coop 5 pour 100 avec un backend permettant la gestion dynamique des contenus (textes et images) par les administrateurs.",
       imageUrl: "/images/coop5pour100.jpg",
       tags: ["NextJS", "Strapi", "TailwindCSS", "TypeScript"],
@@ -22,7 +30,7 @@ export default function Home() {
       demoLink: "https://coop5pour100.org"
     },
     {
-      title: "Site de Coiffure (En dev)",
+      title: "Site Vitrine Coiffure",
       description: "Site vitrine élégant pour un salon de coiffure, avec présentation des services, galerie de réalisations et système de prise de rendez-vous.",
       imageUrl: "/images/coiffure.jpg",
       tags: ["NextJS", "TailwindCSS", "Responsive Design"],
@@ -35,7 +43,7 @@ export default function Home() {
       imageUrl: "/images/chat-app.jpg",
       tags: ["Flutter", "Dart", "API", "Intelligence Artificielle", "Mobile"],
       codeLink: "https://github.com/ChenZnn/Mobile",
-      demoLink: "https://sitecoiffeur.vercel.app/"
+      detailLink: "/projets/discussion-ia"
     }
   ];
 
@@ -110,7 +118,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-center md:justify-end space-x-2">
                   <span className="text-blue-300">Disponibilité:</span>
-                  <span className="text-green-400 font-medium">Disponible pour projets</span>
+                  <span className="text-green-400 font-medium">Recherche alternance CDA 2026-2027</span>
                 </div>
               </div>
             </div>
@@ -128,7 +136,7 @@ export default function Home() {
               <div className="pt-4">
                 <h3 className="text-xl font-semibold mb-3 text-blue-300">Compétences Techniques</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Next.js", "React", "TypeScript", "TailwindCSS", "Node.js", "Strapi", "Git", "Responsive Design"].map((skill, index) => (
+                  {["Next.js", "React", "TypeScript", "TailwindCSS", "Node.js", "Docker", "Git", "SQL", "Strapi", "REST API"].map((skill, index) => (
                     <span key={index} className="px-3 py-1.5 bg-gray-700 text-blue-300 rounded-full text-sm font-medium">
                       {skill}
                     </span>
@@ -136,6 +144,64 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Parcours */}
+      <section id="parcours" className="py-16 sm:py-24 bg-gray-900">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-blue-400">Mon Parcours</h2>
+          <div className="space-y-8">
+
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                <div className="w-0.5 flex-1 bg-gray-700"></div>
+              </div>
+              <div className="pb-8">
+                <p className="text-blue-300 font-medium">2026 - 2027</p>
+                <h3 className="text-xl font-semibold text-white">Bachelor Concepteur Développeur d&apos;Applications (CDA)</h3>
+                <p className="text-gray-400">En recherche d&apos;alternance — Développement full-stack, architecture logicielle et déploiement Cloud.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <div className="w-0.5 flex-1 bg-gray-700"></div>
+              </div>
+              <div className="pb-8">
+                <p className="text-green-300 font-medium">2025 - 2026</p>
+                <h3 className="text-xl font-semibold text-white">Développeur Web — Activité professionnelle</h3>
+                <p className="text-gray-400">Développement de projets clients et personnels. Conception et déploiement d&apos;un système de trading crypto autonome sur Oracle Cloud (Docker, CI, monitoring 24/7).</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+                <div className="w-0.5 flex-1 bg-gray-700"></div>
+              </div>
+              <div className="pb-8">
+                <p className="text-purple-300 font-medium">2024 - 2025</p>
+                <h3 className="text-xl font-semibold text-white">Bachelor Développement Web</h3>
+                <p className="text-gray-400">Approfondissement des frameworks modernes : React, Next.js, TypeScript, API REST. Projets full-stack.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+                <div className="w-0.5 flex-1 bg-gray-700"></div>
+              </div>
+              <div className="pb-8">
+                <p className="text-orange-300 font-medium">2021 - 2023</p>
+                <h3 className="text-xl font-semibold text-white">BTS SIO — Services Informatiques aux Organisations</h3>
+                <p className="text-gray-400">Normandie — Fondamentaux du développement, bases de données, réseaux, gestion de projet. Option SLAM (Solutions Logicielles et Applications Métiers).</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -154,6 +220,7 @@ export default function Home() {
                 tags={project.tags}
                 codeLink={project.codeLink}
                 demoLink={project.demoLink}
+                detailLink={project.detailLink}
               />
             ))}
           </div>
