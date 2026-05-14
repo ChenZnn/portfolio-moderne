@@ -22,6 +22,14 @@ export default function Home() {
       demoLink: "https://portfolio-moderne.vercel.app/"
     },
     {
+      title: "Ressourcerie Coop 5 pour 100",
+      description: "Plateforme de ressourcerie en ligne pour l'association Coop 5 pour 100. Interface moderne et responsive pour la mise en valeur et la gestion des articles disponibles.",
+      imageUrl: "/images/ressourcerie.jpg",
+      tags: ["Next.js", "TailwindCSS"],
+      codeLink: "https://github.com/ChenZnn/Coop5",
+      demoLink: "https://coop5.vercel.app/"
+    },
+    {
       title: "Site Coop 5 pour 100",
       description: "Plateforme complète pour l'association Coop 5 pour 100 avec un backend permettant la gestion dynamique des contenus (textes et images) par les administrateurs.",
       imageUrl: "/images/coop5pour100.jpg",
