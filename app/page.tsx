@@ -4,7 +4,8 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   // Données de projets (à personnaliser)
-  const projects = [
+  type Project = { title: string; description: string; imageUrl?: string; imageFit?: "cover" | "contain"; imagePosition?: "center" | "left" | "right" | "top" | "bottom"; tags: string[]; codeLink?: string; demoLink?: string; detailLink?: string };
+  const projects: Project[] = [
     {
       title: "Crypto Trading Bot — Système Autonome",
       description: "Système de trading crypto autonome déployé 24/7 sur Oracle Cloud. Architecture microservices avec Docker, dashboard temps réel, notifications Telegram, et pipeline de backtesting scientifique sur 4 ans de données (184 expériences). 320 tests automatisés, CI-ready.",
@@ -16,7 +17,7 @@ export default function Home() {
     {
       title: "Portfolio Moderne",
       description: "Un portfolio personnel développé avec Next.js et Tailwind CSS, présentant mes compétences et projets de manière élégante et responsive.",
-      imageUrl: "/images/portfolio.jpg", // Ajoutez une image dans le dossier public/images
+      imageUrl: "/Portfolio.jpg", // Ajoutez une image dans le dossier public/images
       tags: ["Next.js", "TypeScript", "Tailwind CSS"],
       codeLink: "https://github.com/ChenZnn/portfolio-moderne",
       demoLink: "https://portfolio-moderne.vercel.app/"
@@ -24,23 +25,15 @@ export default function Home() {
     {
       title: "Ressourcerie Coop 5 pour 100",
       description: "Plateforme de ressourcerie en ligne pour l'association Coop 5 pour 100. Interface moderne et responsive pour la mise en valeur et la gestion des articles disponibles.",
-      imageUrl: "/images/ressourcerie.jpg",
+      imageUrl: "/Coop5.jpg",
       tags: ["Next.js", "TailwindCSS"],
       codeLink: "https://github.com/ChenZnn/Coop5",
       demoLink: "https://coop5.vercel.app/"
     },
     {
-      title: "Site Coop 5 pour 100",
-      description: "Plateforme complète pour l'association Coop 5 pour 100 avec un backend permettant la gestion dynamique des contenus (textes et images) par les administrateurs.",
-      imageUrl: "/images/coop5pour100.jpg",
-      tags: ["NextJS", "Strapi", "TailwindCSS", "TypeScript"],
-      codeLink: "https://github.com/ChenZnn/coop5pour100",
-      demoLink: "https://coop5pour100.org"
-    },
-    {
       title: "Site Vitrine Coiffure",
       description: "Site vitrine élégant pour un salon de coiffure, avec présentation des services, galerie de réalisations et système de prise de rendez-vous.",
-      imageUrl: "/images/coiffure.jpg",
+      imageUrl: "/SalonCoiffure.jpg",
       tags: ["NextJS", "TailwindCSS", "Responsive Design"],
       codeLink: "https://github.com/ChenZnn/sitecoiffeur",
       demoLink: "https://sitecoiffeur.vercel.app/"
@@ -229,6 +222,7 @@ export default function Home() {
                 codeLink={project.codeLink}
                 demoLink={project.demoLink}
                 detailLink={project.detailLink}
+                imagePosition={project.imagePosition}
               />
             ))}
           </div>

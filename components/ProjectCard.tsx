@@ -7,13 +7,15 @@ interface ProjectCardProps {
   title: string;
   description: string;
   imageUrl?: string;
+  imageFit?: "cover" | "contain";
+  imagePosition?: "center" | "left" | "right" | "top" | "bottom";
   tags: string[];
   codeLink?: string;
   demoLink?: string;
   detailLink?: string;
 }
 
-const ProjectCard = ({ title, description, imageUrl, tags, codeLink, demoLink, detailLink }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, imageUrl, imageFit = "cover", imagePosition = "center", tags, codeLink, demoLink, detailLink }: ProjectCardProps) => {
   const router = useRouter();
 
   return (
@@ -22,12 +24,12 @@ const ProjectCard = ({ title, description, imageUrl, tags, codeLink, demoLink, d
       onClick={() => detailLink && router.push(detailLink)}
     >
       {imageUrl ? (
-        <div className="relative h-48 w-full">
+        <div className={`relative h-48 w-full ${imageFit === "contain" ? "bg-white" : ""}`}>
           <Image
             src={imageUrl}
             alt={title}
             fill
-            className="object-cover"
+            className={`${imageFit === "contain" ? "object-contain" : "object-cover"} ${{ center: "object-center", left: "object-left", right: "object-right", top: "object-top", bottom: "object-bottom" }[imagePosition]}`}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
